@@ -1,0 +1,82 @@
+[
+  {
+    "question": "TypeScript là gì?",
+    "a": "JavaScript framework",
+    "b": "JavaScript superset với type checking",
+    "c": "Ngôn ngữ lập trình mới",
+    "d": "Database",
+    "correct": "B"
+  },
+  {
+    "question": "React Hook nào dùng để quản lý state?",
+    "a": "useEffect",
+    "b": "useContext",
+    "c": "useState",
+    "d": "useRef",
+    "correct": "C"
+  },
+  {
+    "question": "Express.js là gì?",
+    "a": "Frontend framework",
+    "b": "Backend framework cho Node.js",
+    "c": "Database",
+    "d": "CSS framework",
+    "correct": "B"
+  },
+  {
+    "question": "Prisma là gì?",
+    "a": "Frontend library",
+    "b": "ORM cho Node.js",
+    "c": "Testing framework",
+    "d": "CSS library",
+    "correct": "B"
+  },
+  {
+    "question": "JWT dùng để làm gì?",
+    "a": "Query database",
+    "b": "Styling",
+    "c": "Authentication và authorization",
+    "d": "Routing",
+    "correct": "C"
+  },
+  {
+    "question": "REST API là gì?",
+    "a": "Database type",
+    "b": "Architectural style cho web services",
+    "c": "Frontend framework",
+    "d": "Programming language",
+    "correct": "B"
+  },
+  {
+    "question": "PostgreSQL là loại database gì?",
+    "a": "NoSQL",
+    "b": "Graph database",
+    "c": "Relational database (SQL)",
+    "d": "Key-value store",
+    "correct": "C"
+  },
+  {
+    "question": "Tailwind CSS là gì?",
+    "a": "JavaScript library",
+    "b": "Utility-first CSS framework",
+    "c": "Backend framework",
+    "d": "Database ORM",
+    "correct": "B"
+  },
+  {
+    "question": "Node.js chạy trên engine nào?",
+    "a": "SpiderMonkey",
+    "b": "Chakra",
+    "c": "V8",
+    "d": "JavaScriptCore",
+    "correct": "C"
+  },
+  {
+    "question": "CORS là gì?",
+    "a": "Database query language",
+    "b": "Cross-Origin Resource Sharing",
+    "c": "CSS framework",
+    "d": "Testing tool",
+    "correct": "B"
+  }
+]

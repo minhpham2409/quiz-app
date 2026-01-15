@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  passwordHash String         @map("password_hash")
+  name         String
+  createdAt    DateTime       @default(now()) @map("created_at")
+  
+  questions    Question[]
+  progress     UserProgress[]
+
+  @@map("users")
+}
+
+model Question {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  questionText String   @map("question_text")
+  answerA      String   @map("answer_a")
+  answerB      String   @map("answer_b")
+  answerC      String   @map("answer_c")
+  answerD      String   @map("answer_d")
+  correctAnswer String  @map("correct_answer") // 'A', 'B', 'C', or 'D'
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  progress     UserProgress[]
+
+  @@index([userId])
+  @@map("questions")
+}
+
+model UserProgress {
+  id             String    @id @default(uuid())
+  userId         String    @map("user_id")
+  questionId     String    @map("question_id")
+  isCorrect      Boolean   @default(false) @map("is_correct")
+  incorrectCount Int       @default(0) @map("incorrect_count")
+  lastAttempted  DateTime? @map("last_attempted")
+  
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question       Question  @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([userId])
+  @@index([questionId])
+  @@map("user_progress")
+}
